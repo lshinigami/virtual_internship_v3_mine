@@ -172,3 +172,6 @@
 * [Телеграмм группа проекта](https://t.me/+YmrodVgEq88xYjU0)
 * [Телеграмм автора курса] (javaguruby)
 * [Емейл автора курса] (itguruby@mail.ru)
+
+
+
