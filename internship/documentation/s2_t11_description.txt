@@ -1,0 +1,1 @@
+то же самле что в s1_t10 только в файле TravelCalculatePremiumResponse
