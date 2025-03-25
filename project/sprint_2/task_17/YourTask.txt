@@ -1,4 +1,4 @@
-Ваша задача: заполнить в ответе свойство agreementPrice согласно
+Ваша задача: заполнить в response ServiceImpl свойство agreementPrice согласно
 следующей формуле:
 
     agreementPrice = days between agreementDateFrom and agreementDateTo

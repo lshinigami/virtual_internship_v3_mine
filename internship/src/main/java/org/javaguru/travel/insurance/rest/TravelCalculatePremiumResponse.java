@@ -1,5 +1,6 @@
 package org.javaguru.travel.insurance.rest;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -10,6 +11,7 @@ public class TravelCalculatePremiumResponse {
     private String personLastName;
     private LocalDate agreementDateFrom;
     private LocalDate agreementDateTo;
+    private BigDecimal agreementPrice;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public TravelCalculatePremiumResponse () {}
@@ -19,6 +21,14 @@ public class TravelCalculatePremiumResponse {
         this.personLastName = personLastName;
         this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
         this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+    }
+
+    public TravelCalculatePremiumResponse (String personFirstName, String personLastName, CharSequence agreementDateFrom, CharSequence agreementDateTo, BigDecimal agreementPrice) {
+        this.personFirstName = personFirstName;
+        this.personLastName = personLastName;
+        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
+        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+        this.agreementPrice = agreementPrice;
     }
 
     public String getPersonFirstName () {
@@ -52,5 +62,13 @@ public class TravelCalculatePremiumResponse {
 
     public void setAgreementDateTo (CharSequence agreementDateTo) {
         this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+    }
+
+    public BigDecimal getAgreementPrice() {
+        return agreementPrice;
+    }
+
+    public void setAgreementPrice(BigDecimal agreementPrice) {
+        this.agreementPrice = agreementPrice;
     }
 }

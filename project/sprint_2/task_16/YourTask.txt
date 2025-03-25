@@ -1,4 +1,4 @@
-Ваша задача: добавить в ответ свойство agreementPrice
+Ваша задача: добавить в response свойство agreementPrice
 типа BigDecimal (TravelCalculatePremiumResponse).
 
 Узнайте (загуглите), почему для представления денег в Java используется

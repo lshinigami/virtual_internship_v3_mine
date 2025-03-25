@@ -1,0 +1,18 @@
+**Контекст задачи (краткое описание) **
+заполнить в response ServiceImpl свойство agreementPrice
+загуглите как рассчитать количество дней между двумя датами
+в Java.
+
+**Что было сделано и как? (краткое описание)**
+гуглила
+
+**Зачем это было сделано? Чему научился в процессе выполнения задания?**
+Работа с датами
+Period period = Period.between(LocalDate.parse(request.getAgreementDateFrom(), formatter), LocalDate.parse(request.getAgreementDateTo(), formatter));
+
+
+**Сколько потратил времени на выполнение задачи?**
+20 мин
+
+**Заметки, идеи, предложения в свободной форме**
+походу мне придется менять все CharSequence -> LocalDate
