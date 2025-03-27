@@ -9,25 +9,24 @@ public class TravelCalculatePremiumResponse {
 
     private String personFirstName;
     private String personLastName;
-    private LocalDate agreementDateFrom;
-    private LocalDate agreementDateTo;
+    private Date agreementDateFrom;
+    private Date agreementDateTo;
     private BigDecimal agreementPrice;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public TravelCalculatePremiumResponse () {}
 
-    public TravelCalculatePremiumResponse (String personFirstName, String personLastName, CharSequence agreementDateFrom, CharSequence agreementDateTo) {
+    public TravelCalculatePremiumResponse (String personFirstName, String personLastName, Date agreementDateFrom, Date agreementDateTo) {
         this.personFirstName = personFirstName;
         this.personLastName = personLastName;
-        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
-        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+        this.agreementDateFrom = agreementDateFrom;
+        this.agreementDateTo = agreementDateTo;
     }
 
-    public TravelCalculatePremiumResponse (String personFirstName, String personLastName, CharSequence agreementDateFrom, CharSequence agreementDateTo, BigDecimal agreementPrice) {
+    public TravelCalculatePremiumResponse (String personFirstName, String personLastName, Date agreementDateFrom, Date agreementDateTo, BigDecimal agreementPrice) {
         this.personFirstName = personFirstName;
         this.personLastName = personLastName;
-        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
-        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+        this.agreementDateFrom = agreementDateFrom;
+        this.agreementDateTo = agreementDateTo;
         this.agreementPrice = agreementPrice;
     }
 
@@ -47,21 +46,21 @@ public class TravelCalculatePremiumResponse {
         this.personLastName = personLastName;
     }
 
-    public CharSequence getAgreementDateFrom () {
-        return agreementDateFrom.format(formatter);
+    public Date getAgreementDateFrom () {
+        return agreementDateFrom;
     }
 
-    public void setAgreementDateFrom (CharSequence agreementDateFrom) {
-        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
+    public void setAgreementDateFrom (Date agreementDateFrom) {
+        this.agreementDateFrom = agreementDateFrom;
 
     }
 
-    public CharSequence getAgreementDateTo () {
-        return agreementDateTo.format(formatter);
+    public Date getAgreementDateTo () {
+        return agreementDateTo;
     }
 
-    public void setAgreementDateTo (CharSequence agreementDateTo) {
-        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+    public void setAgreementDateTo (Date agreementDateTo) {
+        this.agreementDateTo =agreementDateTo;
     }
 
     public BigDecimal getAgreementPrice() {

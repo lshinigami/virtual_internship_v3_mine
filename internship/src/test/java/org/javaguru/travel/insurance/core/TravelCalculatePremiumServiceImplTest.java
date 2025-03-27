@@ -4,6 +4,9 @@ import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
 import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -15,7 +18,7 @@ class TravelCalculatePremiumServiceImplTest {
 
     @BeforeEach
     private void setUp() {
-        request = new TravelCalculatePremiumRequest("Zhansaya", "Kalymova", "14/12/1996", "14/12/1998");
+        request = new TravelCalculatePremiumRequest("Zhansaya", "Kalymova", new Date(), new Date());
 
         expectedResponse = service.calculatePremium(request);
         actualResponse = new TravelCalculatePremiumResponse(request.getPersonFirstName(),

@@ -5,6 +5,7 @@ import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TravelCalculatePremiumServiceImplAIOneTest {
@@ -14,18 +15,13 @@ public class TravelCalculatePremiumServiceImplAIOneTest {
         TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl();
         String firstName = "John";
         String lastName = "Doe";
-        CharSequence dateFromStr = "01/01/2024";
-        CharSequence dateToStr = "10/01/2024";
+        Date dateFromStr =  new Date();
+        Date dateToStr = new Date();
 
         TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest(firstName, lastName, dateFromStr, dateToStr);
 
         // Act (Выполнение действия)
         TravelCalculatePremiumResponse response = service.calculatePremium(request);
-
-        // Assert (Проверка результатов)
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dateFrom = LocalDate.parse(dateFromStr, formatter);
-        LocalDate dateTo = LocalDate.parse(dateToStr, formatter);
 
         assertEquals(firstName, response.getPersonFirstName());
         assertEquals(lastName, response.getPersonLastName());

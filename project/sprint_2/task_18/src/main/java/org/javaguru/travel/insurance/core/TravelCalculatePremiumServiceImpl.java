@@ -24,6 +24,11 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
         return response;
     }
 
+    @Override
+    public Long agreementPeriod(TravelCalculatePremiumRequest request) {
+        return null;
+    }
+
     private long calculateAgreementDurationInDays(TravelCalculatePremiumRequest request) {
         long diff = request.getAgreementDateFrom().getTime() - request.getAgreementDateTo().getTime();
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);

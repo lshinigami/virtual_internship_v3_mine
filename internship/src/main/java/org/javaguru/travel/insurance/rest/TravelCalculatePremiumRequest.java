@@ -2,22 +2,22 @@ package org.javaguru.travel.insurance.rest;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class TravelCalculatePremiumRequest {
 
     private String personFirstName;
     private String personLastName;
-    private LocalDate agreementDateFrom;
-    private LocalDate agreementDateTo;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private Date agreementDateFrom;
+    private Date agreementDateTo;
     public TravelCalculatePremiumRequest () {
 
     }
-    public TravelCalculatePremiumRequest (String personFirstName, String personLastName, CharSequence agreementDateFrom, CharSequence agreementDateTo) {
+    public TravelCalculatePremiumRequest (String personFirstName, String personLastName, Date agreementDateFrom, Date agreementDateTo) {
         this.personFirstName = personFirstName;
         this.personLastName = personLastName;
-        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
-        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+        this.agreementDateFrom = agreementDateFrom;
+        this.agreementDateTo = agreementDateTo;
     }
 
     public String getPersonFirstName () {
@@ -36,20 +36,20 @@ public class TravelCalculatePremiumRequest {
         this.personLastName = personLastName;
     }
 
-    public CharSequence getAgreementDateFrom () {
-        return agreementDateFrom.format(formatter);
+    public Date getAgreementDateFrom () {
+        return agreementDateFrom;
     }
 
-    public void setAgreementDateFrom (CharSequence agreementDateFrom) {
-        this.agreementDateFrom = LocalDate.parse(agreementDateFrom, formatter);
+    public void setAgreementDateFrom (Date agreementDateFrom) {
+        this.agreementDateFrom = agreementDateFrom;
 
     }
 
-    public CharSequence getAgreementDateTo () {
-        return agreementDateTo.format(formatter);
+    public Date getAgreementDateTo () {
+        return agreementDateTo;
     }
 
-    public void setAgreementDateTo (CharSequence agreementDateTo) {
-        this.agreementDateTo = LocalDate.parse(agreementDateTo, formatter);
+    public void setAgreementDateTo (Date agreementDateTo) {
+        this.agreementDateTo = agreementDateTo;
     }
 }
